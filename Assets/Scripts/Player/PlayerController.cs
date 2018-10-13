@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-    public float speed;
+    public float walkSpeed = 20;
+    public float runSpeed = 40;
     public float jumpPower;
 
+    private float speed;
     private Rigidbody2D rb_2d;
     private Animator animator;
 
@@ -23,8 +25,12 @@ public class PlayerController : MonoBehaviour {
 
         transform.Translate(Vector2.right * Time.deltaTime * speed);
 
-        if(Input.GetAxis("Horizontal") > 0) {
-
+        if(Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) {
+            animator.SetBool("Running", true);
+            speed = runSpeed;
+        } else {
+            animator.SetBool("Running", false);
+            speed = walkSpeed;
         }
 	}
 }
