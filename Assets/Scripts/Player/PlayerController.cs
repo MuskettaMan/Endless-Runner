@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour {
 
     public float walkSpeed = 20;
     public float runSpeed = 40;
+    public float slideSpeed = 30;
     public float jumpPower;
 
     private float speed;
@@ -21,7 +22,7 @@ public class PlayerController : MonoBehaviour {
 
     void Update () {
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, GetComponent<SpriteRenderer>().bounds.size.y / 2, groundLayer);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, GetComponent<SpriteRenderer>().bounds.size.y / 2 + .1f, groundLayer);
 
         isGrounded = (hit) ? true : false;
 
@@ -34,13 +35,21 @@ public class PlayerController : MonoBehaviour {
 
         transform.Translate(Vector2.right * Time.deltaTime * speed);
 
-        if(Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) {
+        if(Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D) && isGrounded) {
             animator.SetBool("Running", true);
             speed = runSpeed;
         } else {
             animator.SetBool("Running", false);
             speed = walkSpeed;
         }
-	}
+
+        if(Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S) && isGrounded) {
+            animator.SetBool("Sliding", true);
+            speed = slideSpeed;
+        } else if(animator.GetBool("Sliding")){
+            animator.SetBool("Sliding", false);
+            speed = walkSpeed;
+        }
+    }
 
 }
