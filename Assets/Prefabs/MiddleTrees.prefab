@@ -80,6 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgHandler: {fileID: 0}
   backgroundPrefab: {fileID: 1264613573188716}
+  name: MiddleTrees
 --- !u!212 &212306506357865078
 SpriteRenderer:
   m_ObjectHideFlags: 1

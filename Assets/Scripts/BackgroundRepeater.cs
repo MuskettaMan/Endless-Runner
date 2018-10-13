@@ -8,6 +8,8 @@ public class BackgroundRepeater : MonoBehaviour {
     [SerializeField] private GameObject backgroundPrefab;
     private float xOffset = 0;
 
+    [SerializeField] private string name;
+
 
 	// Use this for initialization
 	void Start () {
@@ -20,7 +22,7 @@ public class BackgroundRepeater : MonoBehaviour {
 
     public void SpawnBackground() {
         GameObject instance = Instantiate(backgroundPrefab, transform.position + new Vector3(xOffset, 0, 0), transform.rotation);
-        instance.name = "Background Clone";
+        instance.name = name;
         bgHandler.spawnedInstances.Add(instance);
     }
 
