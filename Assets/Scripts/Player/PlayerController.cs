@@ -5,19 +5,26 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     public float speed;
-
-    private float x;
+    public float jumpPower;
 
     private Rigidbody2D rb_2d;
+    private Animator animator;
 
     private void Start() {
         rb_2d = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Update () {
 
-        x = Input.GetAxis("Horizontal") * Time.deltaTime * speed;
+        if(Input.GetButtonDown("Jump")) {
+            rb_2d.AddForce(new Vector2(0, jumpPower * Time.deltaTime), ForceMode2D.Impulse);
+        }
 
-        rb_2d.velocity = new Vector2(x, 0);
+        transform.Translate(Vector2.right * Time.deltaTime * speed);
+
+        if(Input.GetAxis("Horizontal") > 0) {
+
+        }
 	}
 }
