@@ -81,6 +81,7 @@ MonoBehaviour:
   bgHandler: {fileID: 0}
   backgroundPrefab: {fileID: 1700735198523356}
   name: BackTrees
+  passedThrough: 0
 --- !u!212 &212879085268673360
 SpriteRenderer:
   m_ObjectHideFlags: 1

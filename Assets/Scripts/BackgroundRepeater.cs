@@ -10,16 +10,17 @@ public class BackgroundRepeater : MonoBehaviour {
 
     [SerializeField] private string name;
 
-    private bool passedThrough = false;
+    [SerializeField] private bool passedThrough = false;
 
 	// Use this for initialization
 	void Start () {
         xOffset = GetComponent<SpriteRenderer>().bounds.size.x;
+        passedThrough = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if(collision.gameObject.tag == "Player" && !passedThrough) {
-            passedThrough = false;
+            passedThrough = true;
             SpawnBackground();
         }
         

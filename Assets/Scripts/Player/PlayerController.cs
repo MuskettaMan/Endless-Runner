@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour {
     public float runSpeed = 40;
     public float slideSpeed = 30;
     public float jumpPower;
+    public bool canMove = true;
 
     private float speed;
     [SerializeField] private bool isGrounded = true;
@@ -21,6 +22,9 @@ public class PlayerController : MonoBehaviour {
     }
 
     void Update () {
+
+        if(!canMove)
+            return;
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, GetComponent<SpriteRenderer>().bounds.size.y / 2 + .1f, groundLayer);
 

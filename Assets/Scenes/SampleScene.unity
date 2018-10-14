@@ -326,6 +326,7 @@ GameObject:
   - component: {fileID: 1415477473}
   - component: {fileID: 1415477472}
   - component: {fileID: 1415477469}
+  - component: {fileID: 1415477475}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -405,7 +406,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1415477468}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.12, y: -3.43, z: -2}
+  m_LocalPosition: {x: -21.3, y: -3.43, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -464,6 +465,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1415477475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1415477468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 713d9251884bd6444bcd8b08bdd5d234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  died: 0
 --- !u!1001 &1657003805
 Prefab:
   m_ObjectHideFlags: 0
@@ -521,9 +534,9 @@ GameObject:
   - component: {fileID: 1755905359}
   - component: {fileID: 1755905358}
   - component: {fileID: 1755905357}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StartPlatform
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

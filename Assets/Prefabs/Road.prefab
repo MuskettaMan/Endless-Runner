@@ -110,11 +110,11 @@ EdgeCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -10.96}
   m_EdgeRadius: 0
   m_Points:
   - {x: 0, y: 0}
-  - {x: 0, y: 31.29}
+  - {x: 0, y: 60.01}
 --- !u!114 &114305410931433634
 MonoBehaviour:
   m_ObjectHideFlags: 1
