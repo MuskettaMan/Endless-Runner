@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour {
 
         if(Input.GetButtonDown("Jump") && isGrounded) {
             animator.SetTrigger("Jump");
-            rb_2d.AddForce(new Vector2(0, jumpPower * Time.deltaTime), ForceMode2D.Impulse);
+            rb_2d.AddForce(new Vector2(0, jumpPower), ForceMode2D.Impulse);
         }
 
         animator.SetBool("Falling", !isGrounded);
