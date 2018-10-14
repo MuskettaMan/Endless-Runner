@@ -10,6 +10,7 @@ public class BackgroundRepeater : MonoBehaviour {
 
     [SerializeField] private string name;
 
+    private bool passedThrough = false;
 
 	// Use this for initialization
 	void Start () {
@@ -17,7 +18,11 @@ public class BackgroundRepeater : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        SpawnBackground();
+        if(collision.gameObject.tag == "Player" && !passedThrough) {
+            passedThrough = false;
+            SpawnBackground();
+        }
+        
     }
 
     public void SpawnBackground() {
