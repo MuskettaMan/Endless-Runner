@@ -346,9 +346,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 15
-  runSpeed: 40
-  slideSpeed: 30
+  runSpeed: 25
+  slideSpeed: 20
   jumpPower: 25
+  canMove: 1
   isGrounded: 1
   groundLayer:
     serializedVersion: 2
