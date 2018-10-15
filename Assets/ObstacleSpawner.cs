@@ -24,6 +24,15 @@ public class ObstacleSpawner : MonoBehaviour {
 
         if(spawnedObstacles[spawnedObstacles.Count - 1].GetComponent<ObstacleHandler>().playerInObstacle) {
             spawnObstacle();
+
+            Debug.Log(spawnedObstacles.Count);
+
+            if(spawnedObstacles.Count > 4) {
+                GameObject toRemove = spawnedObstacles[0];
+                spawnedObstacles.RemoveAt(0);
+
+                Destroy(toRemove);
+            }
         }
 		
 	}
@@ -39,6 +48,7 @@ public class ObstacleSpawner : MonoBehaviour {
         GameObject obstacle = Instantiate(obstacleList[indexNumber], position, transform.rotation);
 
         spawnedObstacles.Add(obstacle);
+
     }
 
     private int generateRandomIndexNumber(int max) {
